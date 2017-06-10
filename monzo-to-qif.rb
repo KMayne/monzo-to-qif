@@ -15,7 +15,7 @@ command :generate do |c|
   c.summary = 'Generate the QIF file'
   c.description = ''
   c.option '--access_token TOKEN', String, 'Your access token from: https://developers.monzo.com/'
-  c.option '--since DATE', String, 'The date (YYYY-MM-DD) to start exporting transactions from. Defaults to two weeks ago.'
+  c.option '--since DATE', String, 'The date (YYYY-MM-DD) to start exporting transactions from. All transactions will be downloaded if omitted.'
   c.option '--folder PATH', String, 'The folder to export to. Defaults to ./exports'
   c.option '--settled_only', String, 'Only export settled transactions'
   c.action do |args, options|

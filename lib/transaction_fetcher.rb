@@ -16,8 +16,8 @@ class TransactionFetcher
   end
 
   private
-  TWO_WEEKS_SECONDS = 2 * 7 * 24 * 60 * 60
-  DEFAULT_DATE = Time.now - TWO_WEEKS_SECONDS
+  # Monzo started Feb 2015 so the default date should capture all transactions
+  DEFAULT_DATE = Date.new(2015,1,1)
 
   def http_get(url)
     JSON.parse(RestClient.get("https://api.monzo.com#{url}", { 'Authorization' => "Bearer #{@access_token}" }))
